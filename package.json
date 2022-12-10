@@ -1,0 +1,28 @@
+{
+  "name": "designpattern-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "tsc && node dist/app.js",
+    "lint": "eslint . --ext .ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hello": "echo \"Hello\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/singh-somnath/DesignPattern-TypeScript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/singh-somnath/DesignPattern-TypeScript/issues"
+  },
+  "homepage": "https://github.com/singh-somnath/DesignPattern-TypeScript#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.46.0",
+    "@typescript-eslint/parser": "^5.46.0",
+    "eslint": "^8.29.0",
+    "typescript": "^4.9.4"
+  }
+}
