@@ -12,7 +12,7 @@ class App{
 
 const objApp = new App();
 
-console.log("<----------------------------------------------------------------------->");
+console.log("<---------------------------------------------------------------------->");
 console.log("");
 console.log(objApp.getProjectName());
 console.log("");
