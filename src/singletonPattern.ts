@@ -16,13 +16,21 @@ export class Singleton{
 }
 
 export class ChocolateBoiler{
+    private static uniqueChocolateBoiler : ChocolateBoiler;
     private empty:boolean;
     private boiled:boolean;
 
-    constructor(){
+    private constructor(){
         this.empty = true;
         this.boiled = false;
         console.log("Boiler is Started");
+    }
+
+    public static getInstance():ChocolateBoiler{
+        if(!ChocolateBoiler.uniqueChocolateBoiler)
+            ChocolateBoiler.uniqueChocolateBoiler = new ChocolateBoiler();
+        
+        return ChocolateBoiler.uniqueChocolateBoiler;
     }
 
     public isEmpty():boolean{

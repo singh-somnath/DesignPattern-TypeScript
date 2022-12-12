@@ -53,13 +53,17 @@ class App{
           objSingleton = Singleton.getInstance();
           console.log(objSingleton.getMessage());
 
-          let objChocolateBoiler:ChocolateBoiler = new ChocolateBoiler();
+          let objChocolateBoiler:ChocolateBoiler = ChocolateBoiler.getInstance();
           objChocolateBoiler.boil();
           objChocolateBoiler.drain();
           objChocolateBoiler.fill();
+          objChocolateBoiler.fill();
           objChocolateBoiler.drain();
-          objChocolateBoiler = new ChocolateBoiler();
+          objChocolateBoiler = ChocolateBoiler.getInstance();
+          objChocolateBoiler.fill();
           objChocolateBoiler.boil();
+          objChocolateBoiler = ChocolateBoiler.getInstance();
+          objChocolateBoiler.fill();
           objChocolateBoiler.drain();
     }
 
