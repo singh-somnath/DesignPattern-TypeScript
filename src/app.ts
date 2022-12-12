@@ -1,6 +1,7 @@
 import { MallardDuck, RedHeadDuck, RubberDuck,DecoyDuck} from "./strategyPattern";
 import { FlyWithWings, FlyNoFly, FlyWithRocketSpeed} from "./strategyPattern";
 import { Quack, SQuack, MuteQuack} from "./strategyPattern";
+import { Singleton} from './singletonPattern';
 
 class App{
     
@@ -46,10 +47,20 @@ class App{
         
     }
 
+    public singleTonPattern(){
+          let objSingleton:Singleton = Singleton.getInstance();
+          console.log(objSingleton.getMessage());
+          objSingleton = Singleton.getInstance();
+          console.log(objSingleton.getMessage());
+    }
+
     public static main():void{
         const app:App = new App();
-        console.log("<---------------------------------------------------------------------->");
-        app.strategyPattern();
+        //console.log("<------------------------Strategy Pattern------------------------------->");
+        //app.strategyPattern();
+        //console.log("<----------------------------------------------------------------------->");
+        console.log("<------------------------Singleton Pattern------------------------------->");
+        app.singleTonPattern();
         console.log("<----------------------------------------------------------------------->");
     }
 
