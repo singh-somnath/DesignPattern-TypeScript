@@ -46,12 +46,15 @@ class App{
         
     }
 
+    public static main():void{
+        let app:App = new App();
+        console.log("<---------------------------------------------------------------------->");
+        app.strategyPattern();
+        console.log("<----------------------------------------------------------------------->");
+    }
+
 }
 
-const objApp = new App();
 
-console.log("<---------------------------------------------------------------------->");
-console.log("");
-objApp.strategyPattern();
-console.log("");
-console.log("<----------------------------------------------------------------------->");
+App.main();
+
