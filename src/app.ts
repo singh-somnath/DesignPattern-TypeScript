@@ -31,14 +31,12 @@ class App{
         console.log(objRubberDuck.quack());
         console.log(objRubberDuck.swim());
         console.log(objRubberDuck.display());
-        console.log(objRubberDuck.fly());
-
+      
         let objDecoyDuck = new DecoyDuck("DecoyDuck");
 
-        console.log(objDecoyDuck.quack());
         console.log(objDecoyDuck.swim());
         console.log(objDecoyDuck.display());
-        console.log(objDecoyDuck.fly());
+        
     }
 
 }
