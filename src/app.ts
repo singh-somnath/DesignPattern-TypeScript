@@ -1,7 +1,7 @@
 import { MallardDuck, RedHeadDuck, RubberDuck,DecoyDuck} from "./strategyPattern";
 import { FlyWithWings, FlyNoFly, FlyWithRocketSpeed} from "./strategyPattern";
 import { Quack, SQuack, MuteQuack} from "./strategyPattern";
-import { Singleton} from './singletonPattern';
+import { Singleton,ChocolateBoiler} from './singletonPattern';
 
 class App{
     
@@ -52,6 +52,15 @@ class App{
           console.log(objSingleton.getMessage());
           objSingleton = Singleton.getInstance();
           console.log(objSingleton.getMessage());
+
+          let objChocolateBoiler:ChocolateBoiler = new ChocolateBoiler();
+          objChocolateBoiler.boil();
+          objChocolateBoiler.drain();
+          objChocolateBoiler.fill();
+          objChocolateBoiler.drain();
+          objChocolateBoiler = new ChocolateBoiler();
+          objChocolateBoiler.boil();
+          objChocolateBoiler.drain();
     }
 
     public static main():void{

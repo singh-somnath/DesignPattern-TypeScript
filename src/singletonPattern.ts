@@ -14,3 +14,55 @@ export class Singleton{
         return "Hello World";
     }
 }
+
+export class ChocolateBoiler{
+    private empty:boolean;
+    private boiled:boolean;
+
+    constructor(){
+        this.empty = true;
+        this.boiled = false;
+        console.log("Boiler is Started");
+    }
+
+    public isEmpty():boolean{
+        return this.empty;
+    }
+    public isBoiled():boolean{
+        return this.boiled;
+    }
+
+    public boil():void{
+        if(!this.isEmpty() && !this.isBoiled()){
+            console.log("Boiling is in progress ...");
+            console.log("Boiling completed ...");
+            this.boiled = true;
+        }else{
+            console.log("Boiler is Empty or Already Boiled");
+        }
+
+    }
+
+    public drain():void{
+        if(this.isBoiled() && !this.isEmpty()){
+            console.log("Draining is in progress ...");
+            console.log("Draining completed ...");
+            this.empty = true;
+        }else{
+            console.log("Boiler is Empty or Not Boiled");
+        }
+    }
+
+    public fill():void{
+        if(!this.isBoiled() && this.isEmpty()){
+            console.log("Filling is in progress ...");
+            console.log("Filling completed ...");
+            this.empty = false;
+        }else{
+            console.log("Boiler is Not Empty or Already Boiled");
+        }
+    }
+
+
+
+}
