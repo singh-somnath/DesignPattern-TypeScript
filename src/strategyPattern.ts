@@ -1,61 +1,99 @@
-interface IFlyable{
+interface IFlyBehaviour{
     fly():string;
 }
+export class FlyWithWings implements IFlyBehaviour{
+    fly(): string {
+        return "I Fly With Wings";
+    }
+}
 
-interface IQuackable{
+export class FlyNoFly implements IFlyBehaviour{
+    fly(): string {
+        return "I do noyt Fly";
+    }
+}
+
+export class FlyWithRocketSpeed implements IFlyBehaviour{
+    fly(): string {
+        return "I fly with rocket speed";
+    }
+}
+interface IQuackBehaviour{
     quack():string;
 }
 
-abstract class Duck{
-
-    constructor(name:string){
-        console.log("I am " + name);
+export class Quack implements IQuackBehaviour{
+    quack(): string {
+        return "I do Quack";
     }
-      public swim():string{
-        return "I am swimming";
+}
+export class SQuack implements IQuackBehaviour{
+    quack(): string {
+        return "I do SQuack";
+    }
+}
+
+export class MuteQuack implements IQuackBehaviour{
+    quack(): string {
+        return "I do not Quack";
+    }
+}
+abstract class Duck{
+    public flyBehaviour:IFlyBehaviour;
+    public quackBehaviour:IQuackBehaviour;
+
+    constructor( flyBehaviour:IFlyBehaviour,quackBehaviour:IQuackBehaviour){
+        this.flyBehaviour = flyBehaviour;
+        this.quackBehaviour = quackBehaviour;
+    }
+    
+    public swim():string{
+        return "I can Swim.";
     }
     abstract display():string;
+
+    public setFlyBehaviour(flyBehaviour:IFlyBehaviour){
+        this.flyBehaviour = flyBehaviour;
+    }
+    public setQuackBehaviour(quackBehaviour:IQuackBehaviour){
+        this.quackBehaviour = quackBehaviour;
+    }
+
+    public performFly() : string{
+        return this.flyBehaviour.fly();
+    }
+
+    public speak() : string{
+        return this.quackBehaviour.quack();
+    }
 
    
 }
 
-export class MallardDuck extends Duck implements IFlyable, IQuackable{
+export class MallardDuck extends Duck{
     display(): string {
-        return "This is Mallard Duck";
+        return "I am Mallard Duck";
     }
-    public fly():string{
-        return "I am flying;"
-    }
-    public quack():string{
-        return "I am quacking";
-    }
+   
 }
 
-export class RedHeadDuck extends Duck implements IFlyable,IQuackable  {
+export class RedHeadDuck extends Duck{
     display(): string {
-        return "This is Redhead Duck";
+        return "I am  Redhead Duck";
     }
-    public fly():string{
-        return "I am flying;"
-    }
-    public quack():string{
-        return "I am quacking";
-    }
+   
 }
 
-export class RubberDuck extends Duck implements IQuackable{
+export class RubberDuck extends Duck{
     display(): string {
-        return "This is Rubber Duck";
+        return "I am Rubber Duck";
     }  
-    public quack():string{
-        return "I do Squacking";
-    }
   
 }
 
 export class DecoyDuck extends Duck{
     display(): string {
-        return "Wow! Wooden Duck";
+        return "I am Wooden Duck";
     }
  }
 
